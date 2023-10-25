@@ -2,13 +2,13 @@
 
 -- data Cleaning in SQL es
 
-*/
+
 
 
 SELECT *
 FROM Francis_Portfolio_Project..NashvilleHousing     
 
---------------------------------------------------------------------------------------------------------------------------
+--------
 
 -- Standardize Date Format
 -- Our column is a date/time format, standardize it by eliminating the time and leaving just the date
@@ -29,7 +29,7 @@ UPDATE NashvilleHousing
 SET SaleDateConverted = CONVERT(Date,SaleDate)
 
 
- --------------------------------------------------------------------------------------------------------------------------
+ ------
 
 -- Populate Property Address 
 -- There are properties with missing address. 
@@ -64,7 +64,7 @@ WHERE Adem.PropertyAddress is null
 --SELECT *
 --FROM Francis_Portfolio_Project..NashvilleHousing 
 
---------------------------------------------------------------------------------------------------------------------------
+---------
 
 -- The Address contains multiple information that can be split into small columns of Address, City, and State
 
@@ -144,7 +144,7 @@ FROM Francis_Portfolio_Project..NashvilleHousing
 
 
 
---------------------------------------------------------------------------------------------------------------------------
+-------
 
 
 -- Update Table and Set Y to be Yes and N to be No in "Sold as Vacant" field
@@ -176,8 +176,7 @@ SET SoldAsVacant = CASE When SoldAsVacant = 'Y' THEN 'Yes'
 
 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+----------
 -- It is not advicable to delete from your databade but for sample purpose we will remove all Duplicates in this dataset.
 --Setup CTE
 
@@ -209,7 +208,7 @@ FROM Francis_Portfolio_Project..NashvilleHousing
 
 
 
----------------------------------------------------------------------------------------------------------
+--------
 
 -- Also not recommended but to knowledge and education purposes I will delete unused columns, 
 
@@ -236,8 +235,7 @@ DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
 
 
 
------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------
+
 
 --- Importing Data using OPENROWSET and BULK INSERT	
 
